@@ -89,12 +89,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhnx9glj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipetlbztpj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclj9410cj20zk0m8h12.jpg"></li>
         </ul>
       </div>
     </header>
@@ -121,7 +121,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/hello-world/" itemprop="url" title="Hello World"><img data-src="https://img.timelessq.com/images/2022/07/26/c22bb7736559a7554506b05203018145.jpg"></a>
+    <a href="/SQL%E6%B3%A8%E5%85%A5/" itemprop="url" title="SQL注入"><img data-src="https://img.timelessq.com/images/2022/07/26/c22bb7736559a7554506b05203018145.jpg"></a>
   </div>
   <div class="info">
     
@@ -134,21 +134,36 @@
   </span>
 </div>
 
-    <h3><a href="/hello-world/" itemprop="url" title="Hello World">Hello World</a></h3>
+    <h3><a href="/SQL%E6%B3%A8%E5%85%A5/" itemprop="url" title="SQL注入">SQL注入</a></h3>
     <div class="excerpt">
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-# Quick Start
-# Create a new post
-h$ hexo new &quot;My New Post&quot;More info: Writing
-# Run server
-h$...
+        # SQL 注入原理
+在数据交互中，前端的数据传入到后台进行处理时，没有做严格的判断，过滤。导致传入的 “数据” 拼接到 SQL 语句中后，被当作 SQL 语句的一部分执行。从而导致数据库受损（被脱裤、数据被删除、甚至整个服务器权限沦陷）。
+# SQL 注入常用的函数
+
+version() 数据库版本
+
+load_file() 读取文件
+
+@@datadir 数据库路径
+
+ascii() 字符串的 ascii 代码
+
+@@basedir 数据库安装路径
+
+ord() 返回字符串第一个的 ascii 码
+
+mid() 返回字符串的一部分
+
+count() 返回结果的数量
+
+substr()...
     </div>
     <div class="meta footer">
       <span>
-        <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/Java/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%AD%A6Java%E8%AF%AD%E8%A8%80-%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6-%E7%BF%81%E6%81%BA/" itemprop="url" title="零基础学Java语言-浙江大学-翁恺"><i class="ic i-flag"></i>零基础学Java语言-浙江大学-翁恺</a>
+        <a href="/categories/TOP10%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86/SQL%E6%B3%A8%E5%85%A5/" itemprop="url" title="SQL注入"><i class="ic i-flag"></i>SQL注入</a>
       </span>
     </div>
-    <a href="/hello-world/" itemprop="url" title="Hello World" class="btn">more...</a>
+    <a href="/SQL%E6%B3%A8%E5%85%A5/" itemprop="url" title="SQL注入" class="btn">more...</a>
   </div>
 </article>
 
@@ -188,7 +203,7 @@ h$...
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">3</span>
+        <span class="count">2</span>
         <span class="name">分类</span>
       </a>
     </div>
@@ -265,14 +280,12 @@ h$...
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" title="分类于 计算机科学">计算机科学</a>
+<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86/" title="分类于 TOP10漏洞原理">TOP10漏洞原理</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/Java/" title="分类于 Java">Java</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/Java/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%AD%A6Java%E8%AF%AD%E8%A8%80-%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6-%E7%BF%81%E6%81%BA/" title="分类于 零基础学Java语言-浙江大学-翁恺">零基础学Java语言-浙江大学-翁恺</a>
+<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86/SQL%E6%B3%A8%E5%85%A5/" title="分类于 SQL注入">SQL注入</a>
 </div>
 
-    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/SQL%E6%B3%A8%E5%85%A5/" title="SQL注入">SQL注入</a></span>
   </li>
 
   </ul>
