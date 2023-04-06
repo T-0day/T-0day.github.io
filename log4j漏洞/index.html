@@ -24,12 +24,16 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-
-<link rel="canonical" href="https://t-0day.github.io/tags/SSRF%E6%BC%8F%E6%B4%9E/">
-
+  <meta name="keywords" content="log4j漏洞" />
 
 
-  <title>标签：SSRF漏洞 | T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
+<link rel="canonical" href="https://t-0day.github.io/log4j%E6%BC%8F%E6%B4%9E/">
+
+
+
+  <title>
+log4j漏洞 - CVE漏洞 |
+T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
   <div id="loading">
@@ -56,9 +60,19 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">
-    包含标签"SSRF漏洞"的文章
+  <h1 itemprop="name headline">log4j漏洞
   </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-04-06 14:41:13">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-04-06T14:41:13+08:00">2023-04-06</time>
+  </span>
+</div>
+
 
           </div>
         </div>
@@ -87,14 +101,7 @@
 
       </div>
       <div id="imgs" class="pjax">
-        <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclj9410cj20zk0m8h12.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicliwyw55j20zk0m8hdt.jpg"></li>
-        </ul>
+          <img src="https://ysx.cosine.ren/img/header_img/93604793_p0.jpg">
       </div>
     </header>
     <div id="waves">
@@ -114,46 +121,149 @@
       <div class="inner">
         <div id="main" class="pjax">
           
-  <div class="collapse wrap">
-    <h2 class="item header">
-      <a href="/tags">全部</a>
-      <small>/</small>
-      SSRF漏洞
-      <small>标签</small>
-    </h2>
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/CVE%E6%BC%8F%E6%B4%9E/" itemprop="item" rel="index" title="分类于 CVE漏洞"><span itemprop="name">CVE漏洞</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
 
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2023-04-05T12:09:36+08:00"
-                  content="2023-04-05">
-              2023-04-05
-            </time>
-                <span><a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/">TOP10漏洞</a></span>
-          </div>
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://t-0day.github.io/log4j%E6%BC%8F%E6%B4%9E/">
 
-          <div class="title">
-              <a href="/SSRF%E6%BC%8F%E6%B4%9E/" itemprop="url">
-                <span itemprop="name">SSRF漏洞</span>
-              </a>
-          </div>
-        </article>
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="S · Y">
+    <meta itemprop="description" content="=别怕路长梦远，总有星河照耀=, 欢迎来到S·Y的笔记空间,这里,你可以阅读我的学习笔记并提出独到的见解~我们将相互学习交流知识，共同进步。">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="S·Y笔记空间">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="log4j漏洞原理"><a class="markdownIt-Anchor" href="#log4j漏洞原理">#</a> log4j 漏洞原理</h1>
+<p>log4j2 框架下的 lookup 服务提供了 {} 字段解析功能，传进去的值会被直接解析，JNDI 服务会请求远程服务来链接本地对象，这时候只用在 {} 里面调用 JNDI 服务即可反弹 shell 到指定服务器<br>
+特征：数据包里有 {jndi:ladp//} 字段</p>
+<h1 id="log4jl漏洞危害"><a class="markdownIt-Anchor" href="#log4jl漏洞危害">#</a> log4jl 漏洞危害</h1>
+<p>此次漏洞主要是 Log4j2 内含的 lookup 功能存在 JNDI 注入漏洞，该功能可以帮助开发者通过一些协议读取相应环境中的配置。漏洞触发方式非常简单，只要日志内容中包含关键词 ${，那么这里面包含的内容就可以作为变量进行替换，攻击者无需任何权限，可以执行任意命令。</p>
+<h1 id="log4j防御"><a class="markdownIt-Anchor" href="#log4j防御">#</a> log4j 防御</h1>
+<p>（1）设置 log4j2.formatMsgNoLookups=True</p>
+<p>（2）Dlog4j2.formatMsgNoLookups=true。</p>
+<p>（3）设置系统环境变量 FORMAT_MESSAGES_PATTERN_DISABLE_LOOKUPS 为 true</p>
+<p>（4）采用防火墙对请求流量中的 ${jndi 进行拦截，防止 JNDI 注入。</p>
+<p>（5）禁止存在漏洞的业务访问外网，主动外连外网。</p>
+
+      <div class="tags">
+          <a href="/tags/log4j%E6%BC%8F%E6%B4%9E/" rel="tag"><i class="ic i-tag"></i> log4j漏洞</a>
+      </div>
   </div>
 
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-04-06 14:55:09" itemprop="dateModified" datetime="2023-04-06T14:55:09+08:00">2023-04-06</time>
+  </span>
+  <span id="log4j漏洞/" class="item leancloud_visitors" data-flag-title="log4j漏洞" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="S · Y 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="S · Y 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="S · Y 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>S · Y <i class="ic i-at"><em>@</em></i>S·Y笔记空间
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://t-0day.github.io/log4j%E6%BC%8F%E6%B4%9E/" title="log4j漏洞">https://t-0day.github.io/log4j漏洞/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
   
 
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%BC%8F%E6%B4%9E/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.timelessq.com&#x2F;images&#x2F;2022&#x2F;07&#x2F;26&#x2F;8491109c4ae2ac88bbf9659a4f6d5ed2.jpg" title="未授权漏洞">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> TOP10漏洞</span>
+  <h3>未授权漏洞</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
 
 
         </div>
         <div id="sidebar">
           
+
 <div class="inner">
 
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#log4j%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> log4j 漏洞原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#log4jl%E6%BC%8F%E6%B4%9E%E5%8D%B1%E5%AE%B3"><span class="toc-number">2.</span> <span class="toc-text"> log4jl 漏洞危害</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#log4j%E9%98%B2%E5%BE%A1"><span class="toc-number">3.</span> <span class="toc-text"> log4j 防御</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/log4j%E6%BC%8F%E6%B4%9E/" rel="bookmark" title="log4j漏洞">log4j漏洞</a></li>
+        </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -240,6 +350,7 @@
   </ul>
 </div>
 
+
         </div>
         <div class="dimmer"></div>
       </div>
@@ -265,30 +376,10 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/CVE%E6%BC%8F%E6%B4%9E/" title="分类于 CVE漏洞">CVE漏洞</a>
-</div>
-
-    <span><a href="/log4j%E6%BC%8F%E6%B4%9E/" title="log4j漏洞">log4j漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
 </div>
 
-    <span><a href="/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9ERCE/" title="远程代码执行RCE漏洞">远程代码执行RCE漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
-</div>
-
-    <span><a href="/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%BC%8F%E6%B4%9E/" title="未授权漏洞">未授权漏洞</a></span>
+    <span><a href="/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" title="反序列化漏洞">反序列化漏洞</a></span>
   </li>
 
       
@@ -308,7 +399,17 @@
 <a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
 </div>
 
-    <span><a href="/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" title="逻辑漏洞">逻辑漏洞</a></span>
+    <span><a href="/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%BC%8F%E6%B4%9E/" title="未授权漏洞">未授权漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
+</div>
+
+    <span><a href="/XSS%E6%BC%8F%E6%B4%9E/" title="XSS漏洞">XSS漏洞</a></span>
   </li>
 
       
@@ -319,6 +420,26 @@
 </div>
 
     <span><a href="/CSRF%E6%BC%8F%E6%B4%9E/" title="CSRF漏洞">CSRF漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CVE%E6%BC%8F%E6%B4%9E/" title="分类于 CVE漏洞">CVE漏洞</a>
+</div>
+
+    <span><a href="/log4j%E6%BC%8F%E6%B4%9E/" title="log4j漏洞">log4j漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
+</div>
+
+    <span><a href="/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" title="逻辑漏洞">逻辑漏洞</a></span>
   </li>
 
       
@@ -338,17 +459,7 @@
 <a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
 </div>
 
-    <span><a href="/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" title="反序列化漏洞">反序列化漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
-</div>
-
-    <span><a href="/XSS%E6%BC%8F%E6%B4%9E/" title="XSS漏洞">XSS漏洞</a></span>
+    <span><a href="/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9ERCE/" title="远程代码执行RCE漏洞">远程代码执行RCE漏洞</a></span>
   </li>
 
   </ul>
@@ -379,7 +490,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'tags/SSRF漏洞/',
+    path: 'log4j漏洞/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
