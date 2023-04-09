@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="远程代码执行漏洞RCE" />
+  <meta name="keywords" content="HW面试题" />
 
 
-<link rel="canonical" href="https://t-0day.github.io/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9ERCE/">
+<link rel="canonical" href="https://t-0day.github.io/HW%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
 
 
   <title>
-远程代码执行RCE漏洞 - TOP10漏洞 |
+HW面试题 - HW面试题 |
 T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">远程代码执行RCE漏洞
+  <h1 itemprop="name headline">HW面试题
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2023-04-05 00:10:10">
+  <span class="item" title="创建时间：2023-04-06 22:00:34">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2023-04-05T00:10:10+08:00">2023-04-05</time>
+    <time itemprop="dateCreated datePublished" datetime="2023-04-06T22:00:34+08:00">2023-04-06</time>
   </span>
 </div>
 
@@ -101,7 +101,7 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="https://img.timelessq.com/images/2022/07/26/d0ac01ff6ebfeb4159b53fff4ce860d0.jpg">
+          <img src="https://img.timelessq.com/images/2022/07/26/c22bb7736559a7554506b05203018145.jpg">
       </div>
     </header>
     <div id="waves">
@@ -126,12 +126,12 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
 <span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" itemprop="item" rel="index" title="分类于 TOP10漏洞"><span itemprop="name">TOP10漏洞</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/HW%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="item" rel="index" title="分类于 HW面试题"><span itemprop="name">HW面试题</span></a>
 <meta itemprop="position" content="1" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://t-0day.github.io/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9ERCE/">
+  <link itemprop="mainEntityOfPage" href="https://t-0day.github.io/HW%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -146,24 +146,69 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="远程代码执行rce漏洞原理"><a class="markdownIt-Anchor" href="#远程代码执行rce漏洞原理">#</a> 远程代码执行 RCE 漏洞原理</h1>
-<p>远程代码执行漏洞（Remote Code Execution，RCE）是指攻击者通过利用程序或系统中的漏洞，成功地在远程主机上执行自己编写或者上传的恶意代码。攻击者可以利用这个漏洞执行系统命令、上传或下载文件、获取敏感信息等，从而对系统进行攻击。</p>
-<h1 id="分析方法"><a class="markdownIt-Anchor" href="#分析方法">#</a> 分析方法</h1>
-<p>1. 黑盒</p>
-<p>2. 白盒，逆向</p>
-<h1 id="常见rce漏洞成因"><a class="markdownIt-Anchor" href="#常见rce漏洞成因">#</a> 常见 RCE 漏洞成因</h1>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppIngBj"><img data-src="https://s1.ax1x.com/2023/04/05/ppIngBj.png" alt="ppIngBj.png"></a></p>
-<h1 id="漏洞危害"><a class="markdownIt-Anchor" href="#漏洞危害">#</a> 漏洞危害</h1>
-<p><strong>导致攻击者输入的恶意字符被代入后端服务器执行，从而产生危害应用服务器的后果</strong>。</p>
-<h1 id="防御思路"><a class="markdownIt-Anchor" href="#防御思路">#</a> 防御思路</h1>
-<p>1. 等价函数</p>
-<p>2. 大小写绕过</p>
-<p>3. 双写绕过</p>
-<p>4. 编码绕过</p>
-<p>5. 特殊字符绕过</p>
+    <h1 id="序列化与反序列化的区别"><a class="markdownIt-Anchor" href="#序列化与反序列化的区别">#</a> 序列化与反序列化的区别</h1>
+<p>序列化：把对象转化为可传输的字节序列过程称为序列化。</p>
+<p>反序列化：把字节序列还原为对象的过程称为反序列化。</p>
+<h1 id="php命令执行函数"><a class="markdownIt-Anchor" href="#php命令执行函数">#</a> PHP 命令执行函数</h1>
+<pre><code>system
+ shell_exec
+ passthru
+ exec
+ popen
+ proc_open
+ putenv
+ assert
+</code></pre>
+<h1 id="windows-入侵排查思路"><a class="markdownIt-Anchor" href="#windows-入侵排查思路">#</a> Windows 入侵排查思路？</h1>
+<ol>
+<li>收集信息：收集有关系统和网络的信息，包括系统日志、安全日志、进程列表、网络连接列表、服务列表等。</li>
+<li>分析进程：检查所有正在运行的进程，查看是否有可疑的进程或进程行为，比如 CPU 占用率高、网络流量异常等。</li>
+<li>检查注册表：检查注册表中是否有可疑的键值或修改，比如开机自启动项、系统服务等。</li>
+<li>检查网络连接：查看是否有未知的网络连接或远程连接，比如远程桌面连接、FTP 连接等。</li>
+<li>检查文件和目</li>
+</ol>
+<h1 id="linux-入侵排查的常见思路"><a class="markdownIt-Anchor" href="#linux-入侵排查的常见思路">#</a> Linux 入侵排查的常见思路：</h1>
+<ol>
+<li>收集信息：收集有关系统和网络的信息，包括系统日志、安全日志、进程列表、网络连接列表、服务列表等。</li>
+<li>分析进程：检查所有正在运行的进程，查看是否有可疑的进程或进程行为，比如 CPU 占用率高、网络流量异常等。</li>
+<li>检查文件：检查系统文件是否被修改或替换，比如检查 /etc/passwd、/etc/shadow 等文件是否被篡改。</li>
+<li>检查网络连接：查看是否有未知的网络连接或远程连接，比如远程 SSH 连接、FTP 连接等。</li>
+<li>检查系统服务：检查系统服务是否被修改或替换，比如检查是否有未知的系统服务或后台进程。</li>
+<li>分析日志：分析系统日志和安全日志，查找异常的登录尝试、文件访问等行为。</li>
+<li>检查用户账户：检查系统中的用户账户，查看是否有未知的用户或用户行为。</li>
+<li>更新系统和软件：及时更新系统和软件，修补已知的漏洞，提高系统的安全性。</li>
+</ol>
+<h1 id="内网渗透思路"><a class="markdownIt-Anchor" href="#内网渗透思路">#</a> 内网渗透思路</h1>
+<p>代理穿透<br>
+权限维持<br>
+内网信息收集<br>
+口令爆破<br>
+凭据窃取<br>
+社工<br>
+横行和纵向渗透<br>
+拿下域控</p>
+<h1 id="webshell绕过的方法"><a class="markdownIt-Anchor" href="#webshell绕过的方法">#</a> webshell 绕过的方法</h1>
+<p>文件名混淆：将 webshell 文件名中的关键字进行混淆，如将 &quot;shell.php&quot; 改为 &quot;shll.php&quot; 等，使其不易被检测到。</p>
+<p>文件内容加密：将 webshell 文件内容进行加密，使其不易被检测到。可以使用加密算法如 AES、DES 等进行加密。</p>
+<p>隐藏文件属性：将 webshell 文件属性设置为隐藏，使其不易被发现。可以使用命令行或文件管理器进行设置。</p>
+<p>伪造文件类型：将 webshell 文件的扩展名改为其他文件类型，如将 &quot;.php&quot; 改为 &quot;.jpg&quot; 等，使其不易被检测到。</p>
+<p>利用文件包含漏洞：通过文件包含漏洞，将 webshell 代码插入到目标网站的正常代码中，使其不易被检测到。</p>
+<p>利用上传漏洞：通过上传漏洞，将 webshell 文件上传到目标网站中，使其不易被检测到。</p>
+<p>利用反弹 shell：通过反弹 shell，从目标服务器上执行命令，不需要在目标服务器上存放 webshell，从而避免被检测到。</p>
+<p>利用加密传输：通过加密传输，将 webshell 传输到目标服务器，使其不易被检测到。可以使用加密协议如 SSL、TLS 等进行加密传输。</p>
+<h1 id="应急响应"><a class="markdownIt-Anchor" href="#应急响应">#</a> 应急响应</h1>
+<p>应急响应是指在网络安全事故发生时，及时采取措施，快速响应并解决问题，以保护企业的资产和业务正常运转。以下是应急响应的几个步骤：</p>
+<ol>
+<li>预案制定：在网络安全事故发生前，制定完善的应急响应预案，包括预警机制、应急响应流程、人员职责及联系方式等，以应对突发事件。</li>
+<li>事故发现：及时发现网络安全事故，通过监测工具、日志分析等方式，对异常行为进行分析，判断是否为安全事件。</li>
+<li>事件调查：对安全事件进行调查，收集证据，分析攻击手段和攻击路径，确定受影响的系统和数据，并进行风险评估。</li>
+<li>事件处理：根据调查结果，采取相应的应急响应措施，包括隔离受影响的系统和数据、修复漏洞、清除恶意代码等。</li>
+<li>恢复业务：在安全事件得到控制后，进行系统恢复和数据恢复，确保业务正常运转。</li>
+<li>事件总结：对安全事件进行总结和分析，总结经验教训，完善应急</li>
+</ol>
 
       <div class="tags">
-          <a href="/tags/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9ERCE/" rel="tag"><i class="ic i-tag"></i> 远程代码执行漏洞RCE</a>
+          <a href="/tags/HW%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"><i class="ic i-tag"></i> HW面试题</a>
       </div>
   </div>
 
@@ -175,9 +220,9 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-04-05 23:09:01" itemprop="dateModified" datetime="2023-04-05T23:09:01+08:00">2023-04-05</time>
+    <time title="修改时间：2023-04-09 19:47:37" itemprop="dateModified" datetime="2023-04-09T19:47:37+08:00">2023-04-09</time>
   </span>
-  <span id="远程代码执行漏洞RCE/" class="item leancloud_visitors" data-flag-title="远程代码执行RCE漏洞" title="阅读次数">
+  <span id="HW面试题/" class="item leancloud_visitors" data-flag-title="HW面试题" title="阅读次数">
       <span class="icon">
         <i class="ic i-eye"></i>
       </span>
@@ -219,7 +264,7 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://t-0day.github.io/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9ERCE/" title="远程代码执行RCE漏洞">https://t-0day.github.io/远程代码执行漏洞RCE/</a>
+    <a href="https://t-0day.github.io/HW%E9%9D%A2%E8%AF%95%E9%A2%98/" title="HW面试题">https://t-0day.github.io/HW面试题/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -238,20 +283,20 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
     <div class="item left">
       
 
-  <a href="/CSRF%E6%BC%8F%E6%B4%9E/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;ysx.cosine.ren&#x2F;img&#x2F;header_img&#x2F;93604793_p0.jpg" title="CSRF漏洞">
+  <a href="/log4j%E6%BC%8F%E6%B4%9E/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;ysx.cosine.ren&#x2F;img&#x2F;header_img&#x2F;93604793_p0.jpg" title="log4j漏洞">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> TOP10漏洞</span>
-  <h3>CSRF漏洞</h3>
+  <span class="category"><i class="ic i-flag"></i> CVE漏洞</span>
+  <h3>log4j漏洞</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/SSRF%E6%BC%8F%E6%B4%9E/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.timelessq.com&#x2F;images&#x2F;2022&#x2F;07&#x2F;26&#x2F;a76ca77286f858f47f8d2b08232bdef1.jpg" title="SSRF漏洞">
+  <a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.timelessq.com&#x2F;images&#x2F;2022&#x2F;07&#x2F;26&#x2F;cf4be7119bd8f8bbbb499428b4effd12.jpg" title="中间件漏洞">
   <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> TOP10漏洞</span>
-  <h3>SSRF漏洞</h3>
+  <span class="category"><i class="ic i-flag"></i> 中间件漏洞</span>
+  <h3>中间件漏洞</h3>
   </a>
 
     </div>
@@ -270,11 +315,11 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8Crce%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> 远程代码执行 RCE 漏洞原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text"> 分析方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81rce%E6%BC%8F%E6%B4%9E%E6%88%90%E5%9B%A0"><span class="toc-number">3.</span> <span class="toc-text"> 常见 RCE 漏洞成因</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%8D%B1%E5%AE%B3"><span class="toc-number">4.</span> <span class="toc-text"> 漏洞危害</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1%E6%80%9D%E8%B7%AF"><span class="toc-number">5.</span> <span class="toc-text"> 防御思路</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text"> 序列化与反序列化的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#php%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> PHP 命令执行函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-%E5%85%A5%E4%BE%B5%E6%8E%92%E6%9F%A5%E6%80%9D%E8%B7%AF"><span class="toc-number">3.</span> <span class="toc-text"> Windows 入侵排查思路？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux-%E5%85%A5%E4%BE%B5%E6%8E%92%E6%9F%A5%E7%9A%84%E5%B8%B8%E8%A7%81%E6%80%9D%E8%B7%AF"><span class="toc-number">4.</span> <span class="toc-text"> Linux 入侵排查的常见思路：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E6%80%9D%E8%B7%AF"><span class="toc-number">5.</span> <span class="toc-text"> 内网渗透思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webshell%E7%BB%95%E8%BF%87%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text"> webshell 绕过的方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="toc-number">7.</span> <span class="toc-text"> 应急响应</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/SQL%E6%B3%A8%E5%85%A5/" rel="bookmark" title="SQL注入">SQL注入</a></li><li><a href="/XSS%E6%BC%8F%E6%B4%9E/" rel="bookmark" title="XSS漏洞">XSS漏洞</a></li><li><a href="/CSRF%E6%BC%8F%E6%B4%9E/" rel="bookmark" title="CSRF漏洞">CSRF漏洞</a></li><li class="active"><a href="/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9ERCE/" rel="bookmark" title="远程代码执行RCE漏洞">远程代码执行RCE漏洞</a></li><li><a href="/SSRF%E6%BC%8F%E6%B4%9E/" rel="bookmark" title="SSRF漏洞">SSRF漏洞</a></li><li><a href="/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" rel="bookmark" title="文件上传漏洞">文件上传漏洞</a></li><li><a href="/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" rel="bookmark" title="反序列化漏洞">反序列化漏洞</a></li><li><a href="/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" rel="bookmark" title="逻辑漏洞">逻辑漏洞</a></li><li><a href="/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%BC%8F%E6%B4%9E/" rel="bookmark" title="未授权漏洞">未授权漏洞</a></li><li><a href="/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="bookmark" title="文件包含漏洞">文件包含漏洞</a></li>
+          <li class="active"><a href="/HW%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="bookmark" title="HW面试题">HW面试题</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -353,12 +398,12 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/CSRF%E6%BC%8F%E6%B4%9E/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/log4j%E6%BC%8F%E6%B4%9E/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/SSRF%E6%BC%8F%E6%B4%9E/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -383,7 +428,67 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
 <a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
 </div>
 
+    <span><a href="/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%BC%8F%E6%B4%9E/" title="未授权漏洞">未授权漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
+</div>
+
     <span><a href="/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9ERCE/" title="远程代码执行RCE漏洞">远程代码执行RCE漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
+</div>
+
+    <span><a href="/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" title="反序列化漏洞">反序列化漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
+</div>
+
+    <span><a href="/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" title="逻辑漏洞">逻辑漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
+</div>
+
+    <span><a href="/CSRF%E6%BC%8F%E6%B4%9E/" title="CSRF漏洞">CSRF漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/CVE%E6%BC%8F%E6%B4%9E/" title="分类于 CVE漏洞">CVE漏洞</a>
+</div>
+
+    <span><a href="/log4j%E6%BC%8F%E6%B4%9E/" title="log4j漏洞">log4j漏洞</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
+</div>
+
+    <span><a href="/XSS%E6%BC%8F%E6%B4%9E/" title="XSS漏洞">XSS漏洞</a></span>
   </li>
 
       
@@ -416,66 +521,6 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
     <span><a href="/SQL%E6%B3%A8%E5%85%A5/" title="SQL注入">SQL注入</a></span>
   </li>
 
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/" title="分类于 中间件漏洞">中间件漏洞</a>
-</div>
-
-    <span><a href="/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/" title="中间件漏洞">中间件漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
-</div>
-
-    <span><a href="/XSS%E6%BC%8F%E6%B4%9E/" title="XSS漏洞">XSS漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
-</div>
-
-    <span><a href="/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" title="文件包含漏洞">文件包含漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
-</div>
-
-    <span><a href="/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" title="文件上传漏洞">文件上传漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
-</div>
-
-    <span><a href="/%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" title="逻辑漏洞">逻辑漏洞</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/TOP10%E6%BC%8F%E6%B4%9E/" title="分类于 TOP10漏洞">TOP10漏洞</a>
-</div>
-
-    <span><a href="/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" title="反序列化漏洞">反序列化漏洞</a></span>
-  </li>
-
   </ul>
 </div>
 <div>
@@ -504,7 +549,7 @@ T-oday = S·Y笔记空间 = =别怕路长梦远，总有星河照耀=</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '远程代码执行漏洞RCE/',
+    path: 'HW面试题/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
